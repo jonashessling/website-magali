@@ -1,0 +1,14 @@
+/*------------------------------------------------------------------------------- HERO: */
+
+.hero-home {
+    background-image:
+    linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
+    url('../images/DSC08524.jpeg');
+
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}

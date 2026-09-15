@@ -1,0 +1,167 @@
+/*------------------------------------------------------------------------------- GENERAL: */
+
+:root {
+    --white: #fff;
+    --dark: #000;
+    --light: #e9ecef;
+    --fs-h1: clamp(2rem, 1.59rem + 2.04vw, 3.125rem);
+    --fs-h2: clamp(1.625rem, 1.3rem + 1.59vw, 2.5rem);
+    --fs-h3: clamp(1.375rem, 1.14rem + 1.13vw, 2rem);
+    --fs-h4: clamp(1.25rem, 1.11rem + 0.68vw, 1.625rem);
+    --fs-h5: clamp(1.1875rem, 1.11rem + 0.34vw, 1.375rem);
+    --fs-body: clamp(1rem, 0.95rem + 0.22vw, 1.125rem);
+}
+
+section, footer {
+    padding: 100px 0;
+}
+
+body {
+    font-size: var(--fs-body);
+    background-color: var(--dark);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*------------------------------------------------------------------------------- FONTS: */
+
+h1, .h1 {
+    font-size: var(--fs-h1);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h2, .h2 {
+    font-size: var(--fs-h2);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h3, .h3 {
+    font-size: var(--fs-h3);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h4, .h4 {
+    font-size: var(--fs-h4);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h5, .h5 {
+    font-size: var(--fs-h5);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+h6, .h6 {
+    font-size: var(--fs-body);
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/*------------------------------------------------------------------------------- FONTS: */
+
+.btn-white {
+    color: var(--dark) !important;
+    background-color: var(--light) !important;
+    border: 1px solid var(--light) !important;
+    border-radius: 50px !important;
+    font-size: var(--fs-body) !important;
+    transition: .3s;
+    padding: 8px 50px !important;
+}
+
+.btn-white:hover {
+    color: var(--light) !important;
+    background-color: transparent !important;
+}
+
+.btn-white-outline {
+    color: var(--light) !important;
+    background-color: transparent !important;
+    border: 1px solid var(--light) !important;
+    border-radius: 0px !important;
+    font-size: var(--fs-body) !important;
+    transition: .3s;
+    padding: 8px 50px !important;
+    width: 100%;
+}
+
+.btn-white-outline:hover {
+    color: var(--dark) !important;
+    background-color: var(--light) !important;
+    border: 1px solid var(--light) !important;
+}
+
+.btn-dark {
+    color: var(--white) !important;
+    background-color: var(--dark) !important;
+    border: 1px solid var(--dark) !important;
+    border-radius: 50px !important;
+    font-size: var(--fs-body) !important;
+    transition: .3s;
+    padding: 8px 50px !important;
+}
+
+.btn-dark:hover {
+    color: var(--dark) !important;
+    background-color: transparent !important;
+}
+
+.btn-dark-outline {
+    color: var(--dark) !important;
+    background-color: transparent !important;
+    border: 1px solid var(--dark) !important;
+    border-radius: 0px !important;
+    font-size: var(--fs-body) !important;
+    transition: .3s;
+    padding: 8px 50px !important;
+    width: 100%;
+}
+
+.btn-dark-outline:hover {
+    color: var(--white) !important;
+    background-color: var(--dark) !important;
+    border: 1px solid var(--dark) !important;
+}
+
+/*--------------------------------------------------------------------------------------- NAVBAR: */
+
+.navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(7.8px) !important;
+    -webkit-backdrop-filter: blur(7.8px) !important;
+}
+
+.navbar-brand img {
+    width: 100px;
+}
+
+.nav-link {
+    color: var(--light) !important;
+}
+
+.navbar-toggler {
+    border: none !important;
+    font-size: 25px !important;
+    color: var(--light) !important;
+    box-shadow: none !important;
+    padding-right: 0px !important;
+}
+
+/*------------------------------------------------------------------------------- MEDIAQUERY: */

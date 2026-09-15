@@ -1,0 +1,258 @@
+/*------------------------------------------------------------------------------- HERO CAROUSEL: */
+
+.hero-carousel-section {
+    padding: 0;
+}
+
+.hero-carousel,
+.hero-carousel .carousel-inner,
+.hero-carousel .carousel-item {
+    height: 100vh;
+}
+
+.hero-carousel .carousel-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hintergrundbilder inkl. Verlaufsüberlagerung pro Slide */
+.hero-carousel .carousel-item.slide-1 {
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
+        url('../images/DSC08524.jpeg');
+}
+
+.hero-carousel .carousel-item.slide-2 {
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
+        url('../images/luke-stackpoole-5Qqkjn4PFPA-unsplash.jpg');
+}
+
+.hero-carousel .carousel-item.slide-3 {
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
+        url('../images/jared-rice-k3pYa0CDLl0-unsplash.jpg');
+}
+
+/* Optional: Pfeile und Indikatoren etwas anheben, damit sie gut klickbar bleiben */
+.hero-carousel .carousel-indicators {
+    margin-bottom: 2rem;
+}
+
+/*------------------------------------------------------------------------------- ABOUT SECTION: */
+
+.home-about {
+    background-color: var(--white);
+}
+
+.home-about img {
+    height: 70vh;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+/*------------------------------------------------------------------------------- MARQUEE SECTION: */
+
+.course {
+    overflow: hidden; /* Verhindert ungewollte Scrollbalken der ganzen Section */
+}
+
+/* Haupt-Container für das Marquee */
+.marquee-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    /* Weicher Ausblend-Effekt an den Rändern */
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: 15px;
+    width: max-content;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 15px;
+}
+
+.marquee-content img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* --- MOBILE & TABLET (Horizontal) --- */
+/* Track 1: nach links */
+.track-1 .marquee-content {
+    animation: scroll-left 20s linear infinite;
+}
+
+/* Track 2: nach rechts */
+.track-2 .marquee-content {
+    animation: scroll-right 20s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes scroll-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+
+/* --- DESKTOP (Vertikal) --- */
+@media (min-width: 992px) {
+    .marquee-wrapper {
+        flex-direction: row;
+        height: 600px; /* Feste Höhe für den Ausschnitt auf Desktop */
+        /* Ausblend-Effekt von oben nach unten auf Desktop */
+        mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    }
+
+    .marquee-track {
+        flex-direction: column;
+        width: 50%;
+        height: max-content;
+    }
+
+    .marquee-content {
+        flex-direction: column;
+    }
+
+    .marquee-content img {
+        width: 100%;
+        height: 240px;
+    }
+
+    /* Track 1: läuft nach unten */
+    .track-1 .marquee-content {
+        animation: scroll-down 22s linear infinite;
+    }
+
+    /* Track 2: läuft nach oben */
+    .track-2 .marquee-content {
+        animation: scroll-up 22s linear infinite;
+    }
+}
+
+@keyframes scroll-up {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+@keyframes scroll-down {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+/*------------------------------------------------------------------------------- UGC BRANDS SECTION: */
+
+.ugc-brands-section {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+/* 9:16 Card Container */
+.ugc-card {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 520px; /* Perfektes Smartphone-Format */
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ugc-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay für den Brand-Namen auf den Medien */
+.ugc-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Custom Pfeile für den UGC Slider */
+.ugc-slider .carousel-control-prev,
+.ugc-slider .carousel-control-next {
+    width: 45px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+}
+
+.ugc-slider .carousel-control-prev { left: -10px; }
+.ugc-slider .carousel-control-next { right: -10px; }
+
+/* --- HORIZONTALES BRAND MARQUEE --- */
+
+.brand-marquee-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    /* Soft Fade an den Seiten */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.brand-marquee-track {
+    display: flex;
+    gap: 60px;
+    width: max-content;
+}
+
+.brand-marquee-content {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    animation: brand-scroll 25s linear infinite;
+}
+
+.brand-marquee-content img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    /* Macht bunte Logos monochrom (grau/weiß) für ein cleanes Design */
+    transition: all 0.3s ease;
+}
+
+@keyframes brand-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+.instagram iframe {
+    width: 100%;
+    height: 50vh;
+    border: none;
+    border-radius: 10px;
+}
