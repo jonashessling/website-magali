@@ -16,6 +16,10 @@ section, footer {
     padding: 100px 0;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-size: var(--fs-body);
     background-color: var(--dark);
@@ -165,3 +169,28 @@ h6, .h6 {
 }
 
 /*------------------------------------------------------------------------------- MEDIAQUERY: */
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.94);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        padding: 24px 20px;
+        border-radius: 12px;
+        margin-top: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+    }
+}
+
+@media (max-width: 768px) {
+    section, footer {
+        padding: 65px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn-white, .btn-dark {
+        padding: 8px 30px !important;
+    }
+}
