@@ -1,0 +1,177 @@
+/*------------------------------------------------------------------------------- HERO PARTNER: */
+
+#hero-partner {
+    background: 
+        linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
+        url(../images/DSC08524.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+
+/*------------------------------------------------------------------------------- 1. BENEFITS / WARUM UGC (LIGHT): */
+
+.partner-benefits {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.benefit-card {
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    padding: 35px 30px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.07);
+}
+
+.benefit-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.2);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+/*------------------------------------------------------------------------------- 2. FORMATS / LEISTUNGEN (DARK): */
+
+.partner-formats {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.format-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 35px 25px;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.format-card:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+}
+
+.format-badge {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+/*------------------------------------------------------------------------------- 3. PROOF & BRANDS (LIGHT): */
+
+.partner-proof {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.brand-grid-item {
+    background: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    transition: transform 0.3s ease;
+}
+
+.brand-grid-item:hover {
+    transform: translateY(-3px);
+}
+
+.brand-grid-item img {
+    max-height: 35px;
+    max-width: 140px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.85;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.brand-grid-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.testimonial-box {
+    background: #f8f9fa;
+    border-left: 3px solid var(--dark);
+    border-radius: 0 10px 10px 0;
+    padding: 35px;
+}
+
+/*------------------------------------------------------------------------------- 4. WORKFLOW (DARK): */
+
+.partner-workflow {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.workflow-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 35px 25px;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.workflow-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.workflow-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.75rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+/*------------------------------------------------------------------------------- 5. CONTACT / ANFRAGE (LIGHT): */
+
+.partner-contact {
+    background-color: var(--white);
+    color: var(--dark);
+    text-align: center;
+}
+
+.partner-contact-box {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 70px 30px;
+    background: #fdfdfd;
+}
+
+.email-display-badge {
+    font-size: 1.1rem;
+    padding: 10px 24px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.04);
+    display: inline-block;
+    color: var(--dark);
+    margin-bottom: 25px;
+}
+

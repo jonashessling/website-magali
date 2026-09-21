@@ -150,3 +150,152 @@ document.addEventListener('DOMContentLoaded', function () {
         modalVideo.src = '';
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('coachingForm');
+    if (!form) return; // Only run on pages with the coaching form
+
+    let currentStep = 1;
+    const totalSteps = 5;
+
+    const formSteps = document.querySelectorAll('.form-step');
+    const progressBar = document.getElementById('progressBar');
+    const stepIndicatorText = document.getElementById('stepIndicatorText');
+    const btnPrev = document.getElementById('btnPrevStep');
+    const btnNext = document.getElementById('btnNextStep');
+    const btnSubmit = document.getElementById('btnSubmitForm');
+    const modalFooterNav = document.getElementById('modalFooterNav');
+    const successState = document.getElementById('successState'); // Fixed: was 'formSuccessState'
+
+    // Experience slider value display — Fixed IDs: experienceScale / scaleVal
+    const expSlider = document.getElementById('experienceScale');
+    const expDisplay = document.getElementById('scaleVal');
+    if (expSlider && expDisplay) {
+        expSlider.addEventListener('input', function () {
+            expDisplay.textContent = this.value + ' / 10';
+        });
+    }
+
+    // Toggle extra input when "Selbstständig" is selected — Fixed: uses career_status name + value check
+    const careerRadios = document.querySelectorAll('input[name="career_status"]');
+    const selfEmployedField = document.getElementById('selfEmployedField');
+    if (careerRadios.length && selfEmployedField) {
+        // Wrap the field in a container we can show/hide (the parent div.mt-3)
+        const selfEmployedWrap = selfEmployedField.closest('.mt-3');
+        if (selfEmployedWrap) {
+            selfEmployedWrap.classList.add('d-none'); // Hidden by default
+        }
+        careerRadios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (selfEmployedWrap) {
+                    if (this.value === 'Selbstständig') {
+                        selfEmployedWrap.classList.remove('d-none');
+                    } else {
+                        selfEmployedWrap.classList.add('d-none');
+                    }
+                }
+            });
+        });
+    }
+
+    function updateStepView() {
+        formSteps.forEach(step => {
+            const stepNum = parseInt(step.getAttribute('data-step'), 10);
+            step.classList.toggle('active', stepNum === currentStep);
+        });
+
+        const progressPct = (currentStep / totalSteps) * 100;
+        if (progressBar) progressBar.style.width = progressPct + '%';
+        if (stepIndicatorText) stepIndicatorText.textContent = `Schritt ${currentStep} von ${totalSteps}`;
+
+        if (btnPrev) btnPrev.style.display = (currentStep === 1) ? 'none' : 'block';
+
+        if (currentStep === totalSteps) {
+            if (btnNext) btnNext.classList.add('d-none');
+            if (btnSubmit) btnSubmit.classList.remove('d-none');
+        } else {
+            if (btnNext) btnNext.classList.remove('d-none');
+            if (btnSubmit) btnSubmit.classList.add('d-none');
+        }
+    }
+
+    function validateCurrentStep() {
+        const currentStepEl = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+        if (!currentStepEl) return true;
+
+        const requiredInputs = currentStepEl.querySelectorAll('[required]');
+        let isValid = true;
+
+        requiredInputs.forEach(input => {
+            if (!input.checkValidity()) {
+                input.reportValidity();
+                isValid = false;
+            }
+        });
+
+        return isValid;
+    }
+
+    if (btnNext) {
+        btnNext.addEventListener('click', function () {
+            if (validateCurrentStep() && currentStep < totalSteps) {
+                currentStep++;
+                updateStepView();
+            }
+        });
+    }
+
+    if (btnPrev) {
+        btnPrev.addEventListener('click', function () {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStepView();
+            }
+        });
+    }
+
+    // Handle Form Submit (AJAX for Netlify Forms)
+    if (btnSubmit) {
+        btnSubmit.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (!validateCurrentStep()) return;
+
+            const formData = new FormData(form);
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => showSuccess())
+            .catch(() => showSuccess()); // Show success even on network error (local dev)
+        });
+    }
+
+    function showSuccess() {
+        form.style.display = 'none';
+        if (modalFooterNav) modalFooterNav.style.display = 'none';
+        if (successState) successState.style.display = 'block';
+        if (stepIndicatorText) stepIndicatorText.textContent = 'Fertig ✓';
+        if (progressBar) progressBar.style.width = '100%';
+    }
+
+    // Reset modal state on close
+    const modalEl = document.getElementById('coachingApplyModal');
+    if (modalEl) {
+        modalEl.addEventListener('hidden.bs.modal', function () {
+            setTimeout(() => {
+                currentStep = 1;
+                form.reset();
+                if (expDisplay) expDisplay.textContent = '1 / 10';
+                // Re-hide self-employed field
+                const selfEmployedWrap = document.getElementById('selfEmployedField')?.closest('.mt-3');
+                if (selfEmployedWrap) selfEmployedWrap.classList.add('d-none');
+                form.style.display = '';
+                if (modalFooterNav) modalFooterNav.style.display = '';
+                if (successState) successState.style.display = 'none';
+                updateStepView();
+            }, 300);
+        });
+    }
+});

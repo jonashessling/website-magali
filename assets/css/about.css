@@ -1,0 +1,183 @@
+/*------------------------------------------------------------------------------- HERO ABOUT: */
+
+#hero-about {
+    background: 
+        linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
+        url(../images/DSC08524.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+
+/*------------------------------------------------------------------------------- 1. STORY & PHILOSOPHY (LIGHT): */
+
+.about-story {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.75rem);
+    font-weight: 600;
+    line-height: 1.25;
+    text-transform: uppercase;
+    border-left: 3px solid var(--dark);
+    padding-left: 25px;
+}
+
+.value-box {
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    padding: 30px 25px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.value-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.25);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+/*------------------------------------------------------------------------------- 2. AUDIENCE HUB (DARK): */
+
+.about-audiences {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.audience-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 40px 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.audience-card:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-6px);
+}
+
+.audience-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 15px;
+}
+
+.audience-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 30px 0;
+}
+
+.audience-features li {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.audience-features li i {
+    color: var(--white);
+}
+
+/*------------------------------------------------------------------------------- 3. MILESTONES / TIMELINE (LIGHT): */
+
+.about-timeline {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.timeline-track {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    padding: 30px;
+    background: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-4px);
+}
+
+.timeline-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+/*------------------------------------------------------------------------------- 4. STANDARDS / QUALITY (DARK): */
+
+.about-standards {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.standard-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 35px 25px;
+    background: rgba(255, 255, 255, 0.02);
+    height: 100%;
+    transition: border-color 0.3s ease;
+}
+
+.standard-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.standard-icon {
+    font-size: 1.75rem;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+/*------------------------------------------------------------------------------- 5. FINAL CTA (LIGHT): */
+
+.about-cta {
+    background-color: var(--white);
+    color: var(--dark);
+    text-align: center;
+}
+
+.about-cta-box {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 70px 30px;
+    background: #fdfdfd;
+}
+

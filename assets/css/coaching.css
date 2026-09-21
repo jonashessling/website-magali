@@ -1,14 +1,401 @@
-/*------------------------------------------------------------------------------- HERO: */
+/*------------------------------------------------------------------------------- Hero Section: */
 
-.hero-home {
-    background-image:
-    linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
-    url('../images/DSC08524.jpeg');
-
+#hero-coaching {
+    background: 
+        linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
+        url(../images/DSC08524.jpeg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+
+/*------------------------------------------------------------------------------- FORM MODAL: */
+
+.modal-editorial .modal-content {
+    background-color: var(--dark);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px; /* An dein Design-System (10px) angepasst */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9);
+}
+
+/* STEP PROGRESS BAR */
+.step-progress-wrapper {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    height: 3px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.step-progress-bar {
+    height: 100%;
+    background-color: var(--white);
+    width: 20%;
+    transition: width 0.4s ease;
+}
+
+.step-indicator-text {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* FORM CONTROLS IN MODAL */
+.form-step {
+    display: none;
+    animation: fadeInStep 0.3s ease forwards;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeInStep {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-control-editorial,
+.form-select.form-control-editorial {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: var(--white);
+    padding: 12px 16px;
+    font-size: 1rem;
+}
+
+.form-control-editorial:focus,
+.form-select.form-control-editorial:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+    color: var(--white);
+    box-shadow: none;
+}
+
+.form-select.form-control-editorial option {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.form-label-editorial {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 6px;
+}
+
+/* RADIO / CHECKBOX CARDS */
+.custom-option-card {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.custom-option-card input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-option-content {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.custom-option-card input:checked ~ .custom-option-content {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.custom-option-card:hover .custom-option-content {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.check-indicator {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: transparent;
+    transition: all 0.2s ease;
+}
+
+.custom-option-card input:checked ~ .custom-option-content .check-indicator {
+    background-color: var(--white);
+    border-color: var(--white);
+    color: var(--dark);
+}
+
+/* RANGE SLIDER STYLING */
+.form-range::-webkit-slider-thumb {
+    background: var(--white);
+}
+
+.form-range::-moz-range-thumb {
+    background: var(--white);
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.form-range::-moz-range-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+/* Override width:100% from .btn-white-outline when used inside modal footer */
+.btn-modal-back {
+    width: auto !important;
+    padding: 8px 28px !important;
+}
+
+/* SUCCESS STATE */
+.success-state {
+    display: none;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 20px auto;
+    color: var(--white);
+}
+
+/*------------------------------------------------------------------------------- 1. PAIN POINTS SECTION (LIGHT): */
+
+.coaching-pain {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.pain-card {
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    padding: 35px 30px;
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pain-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+}
+
+.pain-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.2);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+/*------------------------------------------------------------------------------- 2. PILLARS / PROGRAMM (DARK): */
+
+.coaching-pillars {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.pillar-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 40px 30px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    transition: all 0.3s ease;
+}
+
+.pillar-card:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+}
+
+.pillar-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.pillar-features {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.pillar-features li {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.pillar-features li i {
+    color: var(--white);
+    margin-top: 2px;
+}
+
+/*------------------------------------------------------------------------------- 3. MENTOR SECTION (LIGHT): */
+
+.coaching-mentor {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.coaching-mentor img {
+    height: 600px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+@media (max-width: 991.98px) {
+    .coaching-mentor img {
+        height: 420px;
+    }
+}
+
+/*------------------------------------------------------------------------------- 4. STEPS / TIMELINE (DARK): */
+
+.coaching-steps {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+.step-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 40px 30px;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.step-card-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.step-card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/*------------------------------------------------------------------------------- 5. FAQ SECTION (LIGHT): */
+
+.coaching-faq {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+.editorial-accordion .accordion-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0 !important;
+}
+
+.editorial-accordion .accordion-button {
+    background-color: transparent;
+    box-shadow: none !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--dark);
+    padding: 24px 0;
+}
+
+.editorial-accordion .accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: var(--dark);
+}
+
+.editorial-accordion .accordion-button::after {
+    filter: grayscale(100%);
+    transition: transform 0.3s ease;
+}
+
+.editorial-accordion .accordion-body {
+    padding: 0 0 24px 0;
+    color: #495057;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/*------------------------------------------------------------------------------- 6. FINAL CTA BANNER (DARK): */
+
+.coaching-cta {
+    background-color: var(--dark);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.coaching-cta-box {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 70px 40px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
 }
