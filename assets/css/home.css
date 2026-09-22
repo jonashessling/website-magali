@@ -21,7 +21,7 @@
 .hero-carousel .carousel-item.slide-1 {
     background-image: 
         linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
-        url('../images/DSC08524.jpeg');
+        url('../images/9FF7D4FA-B29F-4502-BABD-66CEBDDD4574_1_105_c.jpeg');
 }
 
 .hero-carousel .carousel-item.slide-2 {
@@ -294,23 +294,55 @@
 
 .brand-marquee-track {
     display: flex;
-    gap: 60px;
+    gap: 70px;
     width: max-content;
 }
 
 .brand-marquee-content {
     display: flex;
-    gap: 60px;
+    gap: 70px;
     align-items: center;
-    animation: brand-scroll 25s linear infinite;
+    animation: brand-scroll 28s linear infinite;
 }
 
-.brand-marquee-content img {
-    height: 40px;
+.brand-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    min-width: 110px;
+}
+
+.brand-logo-wrap img {
     width: auto;
     object-fit: contain;
-    /* Macht bunte Logos monochrom (grau/weiß) für ein cleanes Design */
     transition: all 0.3s ease;
+}
+
+/* Optisches Gleichgewicht (Visual Weight Balancing) */
+.brand-logo-bose {
+    height: 18px !important;
+    max-width: 125px;
+}
+
+.brand-logo-schwarzkopf {
+    height: 38px !important;
+    max-width: 120px;
+}
+
+.brand-logo-deichmann {
+    height: 38px !important;
+    max-width: 48px;
+}
+
+.brand-logo-intersport {
+    height: 24px !important;
+    max-width: 135px;
+}
+
+.brand-logo-idealo {
+    height: 28px !important;
+    max-width: 110px;
 }
 
 @keyframes brand-scroll {
