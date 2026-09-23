@@ -233,3 +233,65 @@ h6, .h6 {
     padding-top: 25px;
     font-size: 0.85rem;
 }
+
+/*------------------------------------------------------------------------------- LEGAL PAGES (IMPRESSUM & DATENSCHUTZ): */
+
+.legal-section {
+    padding-top: 160px;
+    padding-bottom: 100px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.legal-container {
+    max-width: 860px;
+}
+
+.legal-content h3, 
+.legal-content .h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--white);
+    letter-spacing: 0.5px;
+}
+
+.legal-content h4, 
+.legal-content .h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.legal-content p, 
+.legal-content li {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.legal-content ul {
+    padding-left: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.legal-content li {
+    margin-bottom: 0.5rem;
+}
+
+.legal-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin: 1.5rem 0;
+}
+
+.placeholder-badge {
+    background: rgba(255, 193, 7, 0.15);
+    color: #ffca2c;
+    border: 1px dashed rgba(255, 193, 7, 0.4);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+    display: inline-block;
+}
