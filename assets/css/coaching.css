@@ -288,16 +288,76 @@
     color: var(--dark);
 }
 
-.coaching-mentor img {
-    height: 600px;
+/* Staggered Duo Images in Mentor Section */
+.mentor-duo-wrapper {
+    position: relative;
+    padding: 24px 0;
+}
+
+.mentor-col-left {
+    transform: translateY(-24px);
+    transition: transform 0.4s ease;
+}
+
+.mentor-col-right {
+    transform: translateY(24px);
+    transition: transform 0.4s ease;
+}
+
+.mentor-img-frame {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    background: #f0f0f0;
+}
+
+.mentor-duo-img {
+    width: 100%;
+    height: 490px;
     object-fit: cover;
     object-position: center;
-    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.mentor-img-frame:hover .mentor-duo-img {
+    transform: scale(1.03);
 }
 
 @media (max-width: 991.98px) {
-    .coaching-mentor img {
-        height: 420px;
+    .mentor-duo-wrapper {
+        padding: 16px 0;
+    }
+
+    .mentor-col-left {
+        transform: translateY(-15px);
+    }
+
+    .mentor-col-right {
+        transform: translateY(15px);
+    }
+
+    .mentor-duo-img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .mentor-duo-wrapper {
+        padding: 10px 0;
+    }
+
+    .mentor-col-left {
+        transform: translateY(-10px);
+    }
+
+    .mentor-col-right {
+        transform: translateY(10px);
+    }
+
+    .mentor-duo-img {
+        height: 270px;
     }
 }
 
