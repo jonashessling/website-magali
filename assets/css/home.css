@@ -21,19 +21,19 @@
 .hero-carousel .carousel-item.slide-1 {
     background-image: 
         linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
-        url('../images/9FF7D4FA-B29F-4502-BABD-66CEBDDD4574_1_105_c.jpeg');
+        url('../images/104D8907-C371-4F86-A58F-998DB5D8B02C_1_105_c.jpeg');
 }
 
 .hero-carousel .carousel-item.slide-2 {
     background-image: 
         linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
-        url('../images/luke-stackpoole-5Qqkjn4PFPA-unsplash.jpg');
+        url('../images/02AF911A-8FC3-46FC-9C72-52C494348E8C_1_105_c.jpeg');
 }
 
 .hero-carousel .carousel-item.slide-3 {
     background-image: 
         linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, .5), rgba(0, 0, 0, 0)),
-        url('../images/jared-rice-k3pYa0CDLl0-unsplash.jpg');
+        url('../images/E2F387E1-0D85-4F24-B24C-7077E2AD5178_1_105_c.jpeg');
 }
 
 /* Optional: Pfeile und Indikatoren etwas anheben, damit sie gut klickbar bleiben */
