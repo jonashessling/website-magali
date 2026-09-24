@@ -295,3 +295,13 @@ h6, .h6 {
     font-size: 0.9em;
     display: inline-block;
 }
+
+/*------------------------------------------------------------------------------- CTA BOX SPLIT WITH SQUARE IMAGE: */
+
+.cta-square-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}

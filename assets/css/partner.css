@@ -245,8 +245,14 @@
 .partner-contact-box {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    padding: 70px 30px;
+    padding: 60px 30px;
     background: #fdfdfd;
+}
+
+@media (min-width: 992px) {
+    .partner-contact-box {
+        padding: 50px;
+    }
 }
 
 .email-display-badge {

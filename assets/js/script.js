@@ -299,3 +299,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// ------------------------------------------------------------- Feedback Slider Function:
+
+document.addEventListener('DOMContentLoaded', () => {
+    const feedbackSlider = document.getElementById('feedbackSlider');
+    const btnLeft = document.getElementById('feedbackSlideLeft');
+    const btnRight = document.getElementById('feedbackSlideRight');
+
+    if (feedbackSlider && btnLeft && btnRight) {
+        function getScrollStep() {
+            const firstSlide = feedbackSlider.querySelector('.feedback-slide');
+            if (firstSlide) {
+                return firstSlide.getBoundingClientRect().width + 24;
+            }
+            return 360;
+        }
+
+        btnLeft.addEventListener('click', () => {
+            feedbackSlider.scrollBy({
+                left: -getScrollStep(),
+                behavior: 'smooth'
+            });
+        });
+
+        btnRight.addEventListener('click', () => {
+            feedbackSlider.scrollBy({
+                left: getScrollStep(),
+                behavior: 'smooth'
+            });
+        });
+    }
+});
