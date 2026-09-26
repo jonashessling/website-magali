@@ -115,7 +115,33 @@
     margin-bottom: 0;
 }
 
-/* Brand Logo Cards */
+/* Brand Logo Cards & Grid */
+.partner-logo-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media (min-width: 576px) {
+    .partner-logo-col {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
+@media (min-width: 768px) {
+    .partner-logo-col {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .partner-logo-col {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+}
+
 .partner-logo-card {
     background: #f8f9fa;
     border: 1px solid rgba(0, 0, 0, 0.06);
@@ -140,25 +166,71 @@
     transition: all 0.3s ease;
 }
 
-/* Ausbalancierte Logo-Größen */
+/* Ausbalancierte Logo-Größen für alle 13 Marken */
+.partner-logo-dior {
+    height: 25px !important;
+    max-width: 90px;
+}
+
+.partner-logo-mediamarkt {
+    height: 22px !important;
+    max-width: 140px;
+}
+
+.partner-logo-babor {
+    height: 22px !important;
+    max-width: 105px;
+}
+
 .partner-logo-bose {
     height: 18px !important;
+    max-width: 110px;
+}
+
+.partner-logo-lays {
+    height: 44px !important;
+    max-width: 52px;
 }
 
 .partner-logo-schwarzkopf {
     height: 38px !important;
+    max-width: 115px;
 }
 
-.partner-logo-deichmann {
-    height: 38px !important;
+.partner-logo-idealofsweden {
+    height: 14px !important;
+    max-width: 135px;
 }
 
 .partner-logo-intersport {
     height: 24px !important;
+    max-width: 125px;
+}
+
+.partner-logo-rosental {
+    height: 23px !important;
+    max-width: 110px;
+}
+
+.partner-logo-deichmann {
+    height: 38px !important;
+    max-width: 48px;
+}
+
+.partner-logo-mywellness {
+    height: 42px !important;
+    max-width: 85px;
 }
 
 .partner-logo-idealo {
     height: 26px !important;
+    max-width: 100px;
+    mix-blend-mode: multiply;
+}
+
+.partner-logo-blau {
+    height: 28px !important;
+    max-width: 85px;
 }
 
 /* Split Proof Boxen */

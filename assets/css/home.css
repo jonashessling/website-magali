@@ -302,7 +302,7 @@
     display: flex;
     gap: 70px;
     align-items: center;
-    animation: brand-scroll 28s linear infinite;
+    animation: brand-scroll 45s linear infinite;
 }
 
 .brand-logo-wrap {
@@ -319,10 +319,30 @@
     transition: all 0.3s ease;
 }
 
-/* Optisches Gleichgewicht (Visual Weight Balancing) */
+/* Optisches Gleichgewicht (Visual Weight Balancing für alle 13 Marken) */
+.brand-logo-dior {
+    height: 24px !important;
+    max-width: 90px;
+}
+
+.brand-logo-mediamarkt {
+    height: 22px !important;
+    max-width: 160px;
+}
+
+.brand-logo-babor {
+    height: 20px !important;
+    max-width: 105px;
+}
+
 .brand-logo-bose {
     height: 18px !important;
     max-width: 125px;
+}
+
+.brand-logo-lays {
+    height: 40px !important;
+    max-width: 50px;
 }
 
 .brand-logo-schwarzkopf {
@@ -330,9 +350,9 @@
     max-width: 120px;
 }
 
-.brand-logo-deichmann {
-    height: 38px !important;
-    max-width: 48px;
+.brand-logo-idealofsweden {
+    height: 14px !important;
+    max-width: 140px;
 }
 
 .brand-logo-intersport {
@@ -340,9 +360,30 @@
     max-width: 135px;
 }
 
+.brand-logo-rosental {
+    height: 22px !important;
+    max-width: 115px;
+}
+
+.brand-logo-deichmann {
+    height: 38px !important;
+    max-width: 48px;
+}
+
+.brand-logo-mywellness {
+    height: 38px !important;
+    max-width: 85px;
+}
+
 .brand-logo-idealo {
     height: 28px !important;
     max-width: 110px;
+    mix-blend-mode: multiply;
+}
+
+.brand-logo-blau {
+    height: 28px !important;
+    max-width: 85px;
 }
 
 @keyframes brand-scroll {
